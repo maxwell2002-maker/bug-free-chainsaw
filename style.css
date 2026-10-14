@@ -296,4 +296,30 @@ button {
         height: 30px;
     }
 
+    .storageBox {
+    position: static;
+    margin-top: 10px;
+    }
+
+    .editTagButton,
+    .deleteButton {
+        display: none;
+    }
+
+    #prevButton {
+        position: fixed;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10000;
+    }
+
+    #nextButton {
+        position: fixed;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10000;
+    }
+
 }
