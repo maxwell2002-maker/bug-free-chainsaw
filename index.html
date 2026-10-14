@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!--============================================================-->
+<!--メタデータの設定-->
+<head>
+    <meta charset="UTF-8">
+    <title>フォト</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+<!--============================================================-->
+<!--本文-->
+<body>
+
+    <h1>フォト</h1>
+
+    <div class="searchArea">
+        <!--ストレージ-->
+        <div class="storageBox">
+
+            <div class="storageCircle">
+
+                <span id="storagePercent">
+                    0%
+                </span>
+
+            </div>
+
+            <div id="storageInfo">
+
+                使用量計算中...
+
+            </div>
+
+        </div>
+
+        <!--バックアップ-->
+        <button id="backupButton">
+            バックアップ保存
+        </button>
+
+        <button id="restoreButton">
+            バックアップ読込
+        </button>
+
+        <input
+            type="file"
+            id="restoreInput"
+            accept=".json"
+            hidden>
+
+        <br><br>
+
+        <!--写真を選択させる-->
+        <input type="file" id="photoInput" accept="image/*" multiple>
+
+        <br><br>
+
+    </div>
+
+    <div id="photoArea"></div>
+
+    <!-- 拡大表示 -->
+    <div id="modal">
+        
+        <img id="largeImage">
+
+        <div>
+            <button id="prevButton">◀</button>
+
+            <button id="nextButton">▶</button>
+        </div>
+        
+        <button id="closeButton">X</button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+<!---------------------------------------------------------------->
+</html>
