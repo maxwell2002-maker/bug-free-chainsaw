@@ -301,12 +301,12 @@ button {
     margin-top: 10px;
     }
 
-    .editTagButton,
-    .deleteButton {
+    #editTagButton,
+    #deleteButton {
         display: none;
     }
 
-    #prevButton {
+    .prevButton {
         position: fixed;
         left: 10px;
         top: 50%;
@@ -314,7 +314,7 @@ button {
         z-index: 10000;
     }
 
-    #nextButton {
+    .nextButton {
         position: fixed;
         right: 10px;
         top: 50%;
