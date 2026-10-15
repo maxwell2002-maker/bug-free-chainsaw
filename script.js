@@ -464,9 +464,9 @@ function renderPhotos() {
 
         photoItem.appendChild(menu);
 
-        photoItem.appendChild(image);
-
         photoItem.appendChild(tagText);
+
+        photoItem.appendChild(image);
 
         photoItem.appendChild(editTagButton);
 

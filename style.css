@@ -140,11 +140,6 @@ button {
 
 }
 
-.searchArea {
-
-    position: relative;
-}
-
 .storageCircle {
 
     width: 50px;
@@ -277,7 +272,7 @@ button {
 
     #photoArea {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 8px;
     }
 
@@ -296,7 +291,7 @@ button {
         height: 30px;
     }
 
-    .storageCircle{
+    /*.storageCircle{
         position: absolute;
         margin-top: 10px;
     }
@@ -304,7 +299,7 @@ button {
     .storageBox {
         position: absolute;
         margin-top: 10px;
-    }
+    }*/
 
     .editTagButton,
     .deleteButton {
