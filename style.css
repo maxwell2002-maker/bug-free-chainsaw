@@ -296,9 +296,14 @@ button {
         height: 30px;
     }
 
+    .storageCircle{
+        position: absolute;
+        margin-top: 10px;
+    }
+
     .storageBox {
-    position: static;
-    margin-top: 10px;
+        position: absolute;
+        margin-top: 10px;
     }
 
     .editTagButton,
@@ -307,6 +312,7 @@ button {
     }
 
     #prevButton {
+        height: 200px;
         position: fixed;
         left: 10px;
         top: 50%;
@@ -315,6 +321,7 @@ button {
     }
 
     #nextButton {
+        height: 200px;
         position: fixed;
         right: 10px;
         top: 50%;
