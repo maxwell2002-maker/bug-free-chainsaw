@@ -248,13 +248,9 @@ button {
 
 /* 閉じるボタン */
 #closeButton {
-    position: absolute;
-    margin-left: 27%;
-    margin-bottom: 40%;
-
-    border-radius: 50%;
+    margin-top: 10px;
     
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -299,6 +295,14 @@ button {
         display: fixed;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .storageBox {
+
+        position: absolute;
+
+        right: 5px;
+
     }
 
     .editTagButton,
