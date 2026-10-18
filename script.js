@@ -842,6 +842,8 @@ largeImage.addEventListener(
     "wheel",
     function(event) {
 
+        document.body.style.overflow = "hidden";
+
         event.preventDefault();
 
         const rect =
@@ -884,6 +886,7 @@ largeImage.addEventListener(
 closeButton.addEventListener("click", function() {
 
     modal.style.display = "none";
+    document.body.style.overflow = "";
 
 });
 
