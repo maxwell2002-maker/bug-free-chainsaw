@@ -251,7 +251,11 @@ function renderPhotos() {
 
             top: "center top",
 
+            left: "center left",
+
             center: "center center",
+
+            right: "center right",
 
             bottom: "center bottom"
 
@@ -355,10 +359,18 @@ function renderPhotos() {
             上寄せ
         </div>
 
+        <div data-action="left">
+            左寄せ
+        </div>
+
         <div data-action="center">
             中央表示
         </div>
 
+        <div data-action="right">
+            右寄せ
+        </div>
+        
         <div data-action="bottom">
             下寄せ
         </div>
@@ -397,7 +409,9 @@ function renderPhotos() {
 
                 if (
                     action === "top" ||
+                    action === "left" ||
                     action === "center" ||
+                    action === "right" ||
                     action === "bottom"
                 ) {
 
@@ -468,9 +482,9 @@ function renderPhotos() {
 
         photoItem.appendChild(image);
 
-        photoItem.appendChild(editTagButton);
+        //photoItem.appendChild(editTagButton);
 
-        photoItem.appendChild(deleteButton);
+        //photoItem.appendChild(deleteButton);
 
         fragment.appendChild(photoItem);
 
@@ -888,7 +902,7 @@ function createThumbnail(file) {
             const canvas =
                 document.createElement("canvas");
 
-            const width = 300;
+            const width =  600;
 
             const scale =
                 width / img.width;
@@ -959,7 +973,7 @@ async function updateStorageInfo() {
         "storageInfo"
     ).innerHTML =
         `
-        使用量 ${usedGB.toFixed(2)} GB<br>
+        残量 ${usedGB.toFixed(2)} GB
         /${(quotaGB - usedGB).toFixed(2)} GB
         `;
 }

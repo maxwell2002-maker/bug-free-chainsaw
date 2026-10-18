@@ -12,29 +12,23 @@ body {
     min-height: 100vh;
 }
 
-h1 {
-    margin-bottom: 20px;
-
+h3 {
     color: white;
 
-    background-color: rgba(
-        255,
-        255,
-        255,
-        0.15
-    );
+    /*padding: 10px;*/
 
-    padding: 15px;
+    text-align: center;
 
-    border-radius: 10px;
+    /*border-radius: 10px;*/
 }
-
-
 
 
 /* 写真一覧 */
 #photoArea {
-    display: flex;
+    /*display: flex;*/
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 20px;
@@ -52,8 +46,8 @@ h1 {
 
 /* 写真 */
 .photoItem img {
-    width: 200px;
-    height: 150px;
+    width: 315px;
+    height: 444.5px;
     object-fit: cover;
     cursor: pointer;
 }
@@ -64,20 +58,20 @@ button {
     border-radius: 10px;
 }
 
-/* タグ編集ボタン */
+/* タグ編集ボタン 
 .editTagButton {
     color: rgb(1, 18, 255);
     padding: 5px 5px;
     cursor: pointer;
 }
 
-/* 削除ボタン */
+/* 削除ボタン 
 .deleteButton {
     color: red;
     padding: 5px 15px;
     margin-left: 75px;
     cursor: pointer;
-}
+}*/
 
 .searchArea {
 
@@ -130,9 +124,7 @@ button {
 
     position: absolute;
 
-    right: 40px;
-
-    top: 10px;
+    right: 50px;
 
     text-align: center;
 
@@ -141,7 +133,7 @@ button {
 }
 
 .storageCircle {
-
+    
     width: 50px;
 
     height: 50px;
@@ -158,7 +150,7 @@ button {
 
     background: white;
 
-    font-size: 15px;
+    font-size: 20px;
 
     font-weight: bold;
 
@@ -291,12 +283,12 @@ button {
         height: 30px;
     }
 
-    /*.storageCircle{
+    .storageCircle{
         position: absolute;
         margin-top: 10px;
     }
 
-    .storageBox {
+    /*.storageBox {
         position: absolute;
         margin-top: 10px;
     }*/
