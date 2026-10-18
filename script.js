@@ -976,8 +976,8 @@ async function updateStorageInfo() {
         "storageInfo"
     ).innerHTML =
         `
-        残量 ${usedGB.toFixed(2)} GB
-        /${(quotaGB - usedGB).toFixed(2)} GB
+        （残量 ${usedGB.toFixed(2)} GB
+        /${(quotaGB - usedGB).toFixed(2)} GB）
         `;
 }
 

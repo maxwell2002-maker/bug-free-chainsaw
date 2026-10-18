@@ -104,11 +104,11 @@ button {
 
     font-size: 12px;
 
-    width: 200px;
+    width: 90%;
 
     height: 40px;
 
-    text-align: center;
+    text-align: left;
 
     overflow: hidden;
 
@@ -121,34 +121,34 @@ button {
 }
 
 .storageBox {
+    
+    background-color: white;
 
-    position: absolute;
+    position: flex;
 
-    right: 50px;
+    border-radius: 5%;
 
     text-align: center;
 
     font-size: 15px;
 
-}
-
-.storageCircle {
-    
-    width: 50px;
+    width: 200px;
 
     height: 50px;
 
-    border-radius: 50%;
+    margin-left: 50%;
 
-    border: 10px solid #4facfe;
+    transform: translateX(-50%);
 
-    display: flex;
+    /*color: white;*/
 
-    justify-content: center;
+}
 
-    align-items: center;
+.storageCircle {
 
-    background: white;
+    /*text-align: center;*/
+
+    /*color: white;*/
 
     font-size: 20px;
 
@@ -295,19 +295,6 @@ button {
         display: fixed;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .storageBox {
-
-        margin-right: 5px;
-        margin-bottom: 5px;
-
-    }
-
-    .storageCircle {
-
-        margin-left: 100px;
-
     }
 
     .editTagButton,
