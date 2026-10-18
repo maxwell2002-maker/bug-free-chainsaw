@@ -297,6 +297,18 @@ button {
         align-items: center;
     }
 
+    .storageBox {
+
+        font-size: 10px;
+
+    }
+
+    .storageCircle {
+
+        font-size: 15px;
+
+    }
+
     .editTagButton,
     .deleteButton {
         display: none;
