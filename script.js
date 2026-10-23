@@ -984,7 +984,7 @@ async function updateStorageInfo() {
 //スクロール固定
 function renderPhotosKeepScroll() {
 
-    const scrollY = window.scrollY;
+    const scrollY = window.scrollY/5;
 
     renderPhotos();
 
