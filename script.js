@@ -990,7 +990,7 @@ function renderPhotosKeepScroll() {
 
     setTimeout(() => {
         window.scrollTo(0, scrollY);
-    });
+    },100);
 
     console.log("固定",scrollY);
 
