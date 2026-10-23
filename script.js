@@ -142,8 +142,8 @@ function loadPhotos() {
                     ...photos.map(photo => photo.id),
                     0
                 ) + 1;
-
-            renderPhotos();
+            
+            renderPhotosKeepScroll()
         
         };
 
@@ -209,7 +209,7 @@ photoInput.addEventListener("change", async function(event) {
         updateStorageInfo();
     }
 
-    renderPhotos();
+    renderPhotosKeepScroll()
 
 });
 
@@ -320,7 +320,7 @@ function renderPhotos() {
                     p => p.id !== photo.id
                 );
 
-            renderPhotos();
+            renderPhotosKeepScroll()
 
         });
 
@@ -420,7 +420,7 @@ function renderPhotos() {
 
                     savePhoto(photo);
 
-                    renderPhotos();
+                    renderPhotosKeepScroll()
 
                     return;
                 }
@@ -470,7 +470,7 @@ function renderPhotos() {
 
             updateStorageInfo();
 
-            renderPhotos();
+            renderPhotosKeepScroll()
         });
 
         /*実際に以上の機能をHTML側に表示*/
@@ -705,7 +705,7 @@ restoreInput.addEventListener(
                 0
             ) + 1;
 
-        renderPhotos();
+        renderPhotos()
 
         alert(
             "復元が完了しました。"
@@ -979,6 +979,19 @@ async function updateStorageInfo() {
         （残量 ${usedGB.toFixed(2)} GB
         /${(quotaGB - usedGB).toFixed(2)} GB）
         `;
+}
+
+//スクロール固定
+function renderPhotosKeepScroll() {
+
+    const scrollY = window.scrollY;
+
+    renderPhotos();
+
+    requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+    });
+
 }
 
 //serviceWorker登録
