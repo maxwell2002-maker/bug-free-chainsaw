@@ -988,9 +988,11 @@ function renderPhotosKeepScroll() {
 
     renderPhotos();
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
         window.scrollTo(0, scrollY);
     });
+
+    console.log("固定",scrollY);
 
 }
 
