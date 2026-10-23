@@ -280,9 +280,9 @@ button {
     .photoItem img {
         width: 100%;
         height: auto;
-        height: auto;
-        aspect-ratio: 210 / 297;
-        object-fit: cover;
+        /*aspect-ratio: 210 / 297;
+        object-fit: cover;*/
+        display: block;
     }
 
     .tagText {
