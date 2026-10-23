@@ -32,6 +32,7 @@ let currentScale = 1;
 let currentIndex = 0;
 let currentPhotos = [];
 
+let scrollY;
 //=============================================================================
 //起動時の読み込み
 //=============================================================================
@@ -107,6 +108,8 @@ function savePhoto(photo) {
 
 function loadPhotos() {
 
+    scrollY = window.scrollY;
+
     const transaction =
         db.transaction(
             ["photos"],
@@ -177,6 +180,8 @@ function showCurrentPhoto() {
 
 /*配列に画像情報を保存*/
 photoInput.addEventListener("change", async function(event) {
+
+    scrollY = window.scrollY;
 
     const files = photoInput.files;
 
@@ -297,6 +302,7 @@ function renderPhotos() {
         deleteButton.addEventListener("click", function() {
 
             /*削除確認のダイアログを表示*/
+            scrollY = window.scrollY;
             const result = confirm(
                 "この写真を削除しますか？"
                 );
@@ -404,6 +410,8 @@ function renderPhotos() {
             "click",
             function(event) {
 
+                scrollY = window.scrollY;
+
                 const action =
                     event.target.dataset.action;
 
@@ -451,6 +459,8 @@ function renderPhotos() {
 
         /*タイトル編集機能*/
         editTagButton.addEventListener("click", function() {
+
+            scrollY = window.scrollY;
 
             const input = prompt(
                 "タイトルを入力してください",
@@ -983,8 +993,6 @@ async function updateStorageInfo() {
 
 //スクロール固定
 function renderPhotosKeepScroll() {
-
-    const scrollY = window.scrollY/5;
 
     renderPhotos();
 
