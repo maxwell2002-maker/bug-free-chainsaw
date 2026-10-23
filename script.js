@@ -248,7 +248,7 @@ function renderPhotos() {
         /*仮の写真を用意&情報を設定*/
         const image = document.createElement("img");
 
-        image.loading = "lazy";
+        /*image.loading = "lazy";*/
 
         image.src = photo.thumbnail;
 
@@ -273,7 +273,7 @@ function renderPhotos() {
         
         //以降、各写真ごとに与える処理
         /*写真クリック時拡大*/
-        image.addEventListener("click", function() {
+        photoItem.addEventListener("click", function() {
 
             currentPhotos = sortedPhotos;
 
@@ -490,7 +490,7 @@ function renderPhotos() {
 
         photoItem.appendChild(tagText);
 
-        photoItem.appendChild(image);
+        /*photoItem.appendChild(image);*/
 
         //photoItem.appendChild(editTagButton);
 
@@ -848,7 +848,7 @@ async function clearDatabase() {
 //拡大時の処理
 //=============================================================================
 //拡大縮小処理
-largeImage.addEventListener(
+/*largeImage.addEventListener(
     "wheel",
     function(event) {
 
@@ -890,7 +890,7 @@ largeImage.addEventListener(
             `scale(${currentScale})`;
 
     }
-);
+);*/
 
 // 閉じるボタン
 closeButton.addEventListener("click", function() {
