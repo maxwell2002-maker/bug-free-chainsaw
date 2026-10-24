@@ -350,9 +350,9 @@ function renderPhotos() {
         const menuButton =
             document.createElement("button");
 
-        menuButton.textContent = "⋮";
+            menuButton.textContent = "⋮";
 
-        menuButton.className =
+            menuButton.className =
             "menuButton";
 
         const menu =
@@ -360,8 +360,8 @@ function renderPhotos() {
 
         menu.className = "cardMenu";
 
-        menu.innerHTML = `
-        <div data-action="top">
+        menu.innerHTML = 
+        /*<div data-action="top">
             上寄せ
         </div>
 
@@ -381,9 +381,9 @@ function renderPhotos() {
             下寄せ
         </div>
 
-        <hr>
+        <hr>*/
 
-        <div data-action="edit">
+        `<div data-action="edit">
             タイトル編集
         </div>
 
@@ -415,7 +415,7 @@ function renderPhotos() {
                 const action =
                     event.target.dataset.action;
 
-                if (
+                /*if (
                     action === "top" ||
                     action === "left" ||
                     action === "center" ||
@@ -431,7 +431,7 @@ function renderPhotos() {
                     renderPhotosKeepScroll()
 
                     return;
-                }
+                }*/
 
                 if (action === "edit") {
 

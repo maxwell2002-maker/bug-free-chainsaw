@@ -114,6 +114,10 @@ button {
 
     word-wrap: break-word;
 
+    font-size: 20px;
+
+    font-weight: bold;
+
 }
 
 .message {
@@ -260,7 +264,7 @@ button {
     #modal {
         position: fixed;
         inset: 0;
-        overflow: hidden;
+        overscroll-behavior: contain;
     }
     
     body {
