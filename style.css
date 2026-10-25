@@ -162,6 +162,11 @@ button {
 
 .photoItem {
     position: relative;
+    background-color: white;
+}
+
+.photoItem.highlight {
+    background-color: yellow;
 }
 
 .menuButton {

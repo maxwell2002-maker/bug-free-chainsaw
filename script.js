@@ -245,6 +245,9 @@ function renderPhotos() {
 
         photoItem.className = "photoItem";
 
+        photoItem.dataset.tags =
+            photo.tags.join(",");
+
         /*仮の写真を用意&情報を設定*/
         const image = document.createElement("img");
 
@@ -903,6 +906,29 @@ closeButton.addEventListener("click", function() {
 //=============================================================================
 //その他処理
 //=============================================================================
+//検索欄の処理
+const searchBox = document.getElementById("tagSearch");
+
+searchBox.addEventListener("input", function() {
+
+    const keyword = this.value.trim().toLowerCase();
+
+    document.querySelectorAll(".photoItem").forEach(card => {
+
+        const tags = card.dataset.tags.toLowerCase();
+
+        if (
+            keyword !== "" &&
+            tags.includes(keyword)
+        ) {
+            card.classList.add("highlight");
+        } else {
+            card.classList.remove("highlight");
+        }
+    });
+
+});
+
 //サムネイルの表示処理
 function createThumbnail(file) {
 
