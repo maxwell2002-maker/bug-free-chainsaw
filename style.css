@@ -169,6 +169,18 @@ button {
     background-color: yellow;
 }
 
+.tagcount{
+    font-size: 10px;
+}
+
+.photocount{
+    font-size: 10px;
+}
+
+.counter{
+    display: flex;
+}
+
 .menuButton {
 
     z-index: 10;

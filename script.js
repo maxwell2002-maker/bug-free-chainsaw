@@ -937,12 +937,12 @@ searchBox.addEventListener("input", function() {
             card.classList.remove("highlight");
         }
     });
-    document.getElementById("tagcount").textContent = `${hitcount}件ヒット`;
+    document.getElementById("tagcount").textContent = `ヒット: ${hitcount}件`;
 
 });
 
 function Updatephotocount(){
-    document.getElementById("photocount").textContent = `${photos.length}件`;
+    document.getElementById("photocount").textContent = `/${photos.length}件`;
 }
 
 //サムネイルの表示処理
