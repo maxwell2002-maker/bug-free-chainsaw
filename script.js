@@ -147,9 +147,10 @@ function loadPhotos() {
                 ) + 1;
             
             renderPhotosKeepScroll()
+            Updatephotocount();
         
         };
-
+    
 }
 
 /*IDの削除関数*/
@@ -215,6 +216,7 @@ photoInput.addEventListener("change", async function(event) {
     }
 
     renderPhotosKeepScroll()
+    Updatephotocount();
 
 });
 
@@ -232,6 +234,8 @@ function renderPhotos() {
 
     /*並び替え*/
     let sortedPhotos = [...photos];
+
+    
 
     //新しい順に
     sortedPhotos.sort(
@@ -330,6 +334,7 @@ function renderPhotos() {
                 );
 
             renderPhotosKeepScroll()
+            Updatephotocount();
 
         });
 
@@ -723,8 +728,9 @@ restoreInput.addEventListener(
         alert(
             "復元が完了しました。"
         );
-
+        Updatephotocount();
     }
+    
 );
 
 //=============================================================================
@@ -913,21 +919,31 @@ searchBox.addEventListener("input", function() {
 
     const keyword = this.value.trim().toLowerCase();
 
+    let hitcount = 0;
+
     document.querySelectorAll(".photoItem").forEach(card => {
 
         const tags = card.dataset.tags.toLowerCase();
-
+        
         if (
             keyword !== "" &&
             tags.includes(keyword)
         ) {
+            console.log(hitcount);
+            hitcount++;
+            
             card.classList.add("highlight");
         } else {
             card.classList.remove("highlight");
         }
     });
+    document.getElementById("tagcount").textContent = `${hitcount}件ヒット`;
 
 });
+
+function Updatephotocount(){
+    document.getElementById("photocount").textContent = `${photos.length}件`;
+}
 
 //サムネイルの表示処理
 function createThumbnail(file) {
