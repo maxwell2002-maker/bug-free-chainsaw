@@ -282,6 +282,11 @@ function renderPhotos() {
         /*写真クリック時拡大*/
         photoItem.addEventListener("click", function() {
 
+            window.open(
+                photo.imageUrl,
+                "_blank"
+            );
+            /*
             currentPhotos = sortedPhotos;
 
             currentIndex =
@@ -295,7 +300,7 @@ function renderPhotos() {
 
             largeImage.style.transform = "scale(1)";
 
-            modal.style.display = "flex";
+            modal.style.display = "flex";*/
 
         });
 
@@ -306,7 +311,9 @@ function renderPhotos() {
 
         deleteButton.className = "deleteButton";
 
-        deleteButton.addEventListener("click", function() {
+        deleteButton.addEventListener("click", function(event) {
+
+            event.stopPropagation();
 
             /*削除確認のダイアログを表示*/
             scrollY = window.scrollY;
@@ -418,6 +425,8 @@ function renderPhotos() {
             "click",
             function(event) {
 
+                event.stopPropagation();
+
                 scrollY = window.scrollY;
 
                 const action =
@@ -466,7 +475,9 @@ function renderPhotos() {
         editTagButton.className = "editTagButton";
 
         /*タイトル編集機能*/
-        editTagButton.addEventListener("click", function() {
+        editTagButton.addEventListener("click", function(event) {
+
+            event.stopPropagation();
 
             scrollY = window.scrollY;
 
@@ -1038,11 +1049,11 @@ function renderPhotosKeepScroll() {
 
     renderPhotos();
 
-    setTimeout(() => {
+    /*setTimeout(() => {
         window.scrollTo(0, scrollY);
     },100);
 
-    console.log("固定",scrollY);
+    console.log("固定",scrollY);*/
 
 }
 
