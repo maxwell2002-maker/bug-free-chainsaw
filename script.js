@@ -188,7 +188,7 @@ photoInput.addEventListener("change", async function(event) {
 
     for (const file of event.target.files) {
 
-        const thumbnail = await createThumbnail(file);
+        /*const thumbnail = await createThumbnail(file);*/
 
         /*写真追加処理*/
         const photo = {
@@ -200,11 +200,11 @@ photoInput.addEventListener("change", async function(event) {
             imageUrl:
                 URL.createObjectURL(file),
 
-            thumbnail: thumbnail,
+            //thumbnail: thumbnail,
 
             tags: [],
 
-            thumbnailPosition: "center"
+            //thumbnailPosition: "center"
 
         };
 
@@ -257,7 +257,7 @@ function renderPhotos() {
 
         /*image.loading = "lazy";*/
 
-        image.src = photo.thumbnail;
+        //image.src = photo.thumbnail;
 
         const positionMap = {
 
@@ -273,10 +273,10 @@ function renderPhotos() {
 
         };
 
-        image.style.objectPosition =
+        /*image.style.objectPosition =
             positionMap[
                 photo.thumbnailPosition
-            ] || "center center";
+            ] || "center center";*/
         
         //以降、各写真ごとに与える処理
         /*写真クリック時拡大*/
@@ -691,10 +691,10 @@ restoreInput.addEventListener(
                     item.imageData
                 );
 
-            const thumbnail =
+            /*const thumbnail =
                 await createThumbnail(
                     imageFile
-                );
+                );*/
 
             const photo = {
 
@@ -707,14 +707,14 @@ restoreInput.addEventListener(
                         imageFile
                     ),
 
-                thumbnail:
-                    thumbnail,
+                /*thumbnail:
+                    thumbnail,*/
 
                 tags:
                     item.tags || [],
 
-                thumbnailPosition:
-                    item.thumbnailPosition || "center"
+                /*thumbnailPosition:
+                    item.thumbnailPosition || "center"*/
 
             };
 
@@ -764,8 +764,8 @@ async function createBackup() {
 
             tags: photo.tags,
 
-            thumbnailPosition:
-                photo.thumbnailPosition,
+            /*thumbnailPosition:
+                photo.thumbnailPosition,*/
 
             imageData: imageData
 
@@ -957,7 +957,7 @@ function Updatephotocount(){
 }
 
 //サムネイルの表示処理
-function createThumbnail(file) {
+/*function createThumbnail(file) {
 
     return new Promise((resolve) => {
 
@@ -1003,7 +1003,7 @@ function createThumbnail(file) {
 
     });
 
-}
+}*/
 
 //ストレージ計算処理
 async function updateStorageInfo() {
