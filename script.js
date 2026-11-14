@@ -5,12 +5,12 @@
 const photoInput = document.getElementById("photoInput");
 const photoArea = document.getElementById("photoArea");
 
-const modal = document.getElementById("modal");
-const largeImage = document.getElementById("largeImage");
-const closeButton = document.getElementById("closeButton");
+//const modal = document.getElementById("modal");
+//const largeImage = document.getElementById("largeImage");
+//const closeButton = document.getElementById("closeButton");
 
-const prevButton = document.getElementById("prevButton");
-const nextButton = document.getElementById("nextButton");
+//const prevButton = document.getElementById("prevButton");
+//const nextButton = document.getElementById("nextButton");
 
 const backupButton = document.getElementById("backupButton");
 const restoreButton = document.getElementById("restoreButton");
@@ -26,11 +26,11 @@ let nextId = 1;
 let db;
 
 //拡大縮小
-let currentScale = 1;
+//let currentScale = 1;
 
 //拡大表示中の写真管理
-let currentIndex = 0;
-let currentPhotos = [];
+//let currentIndex = 0;
+//let currentPhotos = [];
 
 let scrollY;
 //=============================================================================
@@ -130,14 +130,14 @@ function loadPhotos() {
             photos = request.result;
 
             /*読み込み関数*/
-            for (const photo of photos) {
+            /*for (const photo of photos) {
             
                 photo.imageUrl =
                     URL.createObjectURL(
                         photo.file
                 );
             
-            }
+            }*/
             
             /*IDの更新*/
             nextId =
@@ -172,19 +172,19 @@ function deletePhoto(id) {
 }
 
 //現在の画像
-function showCurrentPhoto() {
+/*function showCurrentPhoto() {
 
     largeImage.src =
         currentPhotos[currentIndex].imageUrl;
 
-}
+}*/
 
 /*配列に画像情報を保存*/
 photoInput.addEventListener("change", async function(event) {
 
     scrollY = window.scrollY;
 
-    const files = photoInput.files;
+    //const files = photoInput.files;
 
     for (const file of event.target.files) {
 
@@ -197,8 +197,8 @@ photoInput.addEventListener("change", async function(event) {
 
             file: file,
 
-            imageUrl:
-                URL.createObjectURL(file),
+            /*imageUrl:
+                URL.createObjectURL(file),*/
 
             //thumbnail: thumbnail,
 
@@ -253,13 +253,13 @@ function renderPhotos() {
             photo.tags.join(",");
 
         /*仮の写真を用意&情報を設定*/
-        const image = document.createElement("img");
+        //const image = document.createElement("img");
 
         /*image.loading = "lazy";*/
 
         //image.src = photo.thumbnail;
 
-        const positionMap = {
+        /*const positionMap = {
 
             top: "center top",
 
@@ -271,7 +271,7 @@ function renderPhotos() {
 
             bottom: "center bottom"
 
-        };
+        };*/
 
         /*image.style.objectPosition =
             positionMap[
@@ -282,8 +282,10 @@ function renderPhotos() {
         /*写真クリック時拡大*/
         photoItem.addEventListener("click", function() {
 
+            const url = URL.createObjectURL(photo.file);
+
             window.open(
-                photo.imageUrl,
+                url,
                 "_blank"
             );
             /*
@@ -327,9 +329,9 @@ function renderPhotos() {
                 }
                 
                 //URLの解放
-                URL.revokeObjectURL(
+                /*URL.revokeObjectURL(
                     photo.imageUrl
-                );
+                );*/
 
                 /*削除ボタン処理*/
                 deletePhoto(photo.id);
@@ -549,7 +551,7 @@ restoreButton.addEventListener(
 /*拡大時のボタン処理*/
 
 //閉じるボタン
-closeButton.addEventListener(
+/*closeButton.addEventListener(
     "click",
     function() {
     
@@ -617,7 +619,7 @@ document.addEventListener(
         }
 
     }
-);
+);*/
 
 //=============================================================================
 //バックアップ読み込み開始時の処理
@@ -702,10 +704,10 @@ restoreInput.addEventListener(
 
                 file: imageFile,
 
-                imageUrl:
+                /*imageUrl:
                     URL.createObjectURL(
                         imageFile
-                    ),
+                    ),*/
 
                 /*thumbnail:
                     thumbnail,*/
@@ -913,12 +915,12 @@ async function clearDatabase() {
 );*/
 
 // 閉じるボタン
-closeButton.addEventListener("click", function() {
+/*closeButton.addEventListener("click", function() {
 
     modal.style.display = "none";
     document.body.style.overflow = "";
 
-});
+});*/
 
 //=============================================================================
 //その他処理
